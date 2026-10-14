@@ -4,25 +4,32 @@
 
 # HumansMap
 
-A knowledge graph for exploring connections between public figures — board
-seats, executive roles, ownership stakes, share transactions, institutional
-holdings.
+This project originated from the curiosity of knowing more about the connections between known figures worldwide. From that it then broadened to organizations, visualization of family dynasties and many other interesting things.  
+
+I put a lot of work into curating the site and making a pleasant experience for users, probably I missed to understand that people don't spend time navigating this type of sites, but it was an interest of mine so I put work on it. 
+
+I am open to suggestions, clearly this kind of work benefits from beautiful and granular data, Wikidata helps a lot with this, there are certain relationships that come up, even when looking at organizations' relationships with people which are interesting.
+
+Data source: Wikidata and Wikimedia Commons. 
 
 Originally live at **[humansmap.com](https://humansmap.com)**. The hosted
-service is being wound down; this repository is the permanent, open-source home
+service is being wound down for resource reasons; this repository is the permanent, opensource home
 of the project.
+ 
 
-Three ways in:
 
-- **Explore** — an interactive graph canvas (Cytoscape.js) for browsing
-  people ↔ company connections
+Below there is an AI GENERATED synthesis of the project. 
+
+Three categories (based on your interests:
+
+- **Explore** — an interactive graph canvas explorable moving from a node to another (Cytoscape.js) for browsing
+  people. You can start by looking at the infinite scrollable leaderboard with filters for various countries and categories.
 - **Play** — a path-finding game and a trivia game built on the same graph
 - **Feed** — a scrollable stream of generated connection cards
 
-Data comes from **Wikidata** (people, organizations, basic relations) and
-**SEC EDGAR** (DEF 14A directors, Form 3/4 ownership, 13F institutional
-holdings). Scope is global, with deeper SEC coverage for US-listed companies.
+Data comes from **Wikidata** (people, organizations, basic relations) 
 
+Below are some examplary screenshots, I imagine this is what will remain when site hosting is closed. 
 ## Screenshots
 
 | Explore a network | Selected node detail |
