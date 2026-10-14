@@ -1,0 +1,48 @@
+name: Bug report
+description: Report reproducible incorrect behavior in the site, API, or tooling.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Do not include credentials or private data.
+        Use the data-correction form for an incorrect connection or profile.
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the behavior and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: How can we reproduce it?
+      description: Include the URL, API request, or minimal sequence of steps.
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser and version, operating system, or deployment commit as relevant.
+      placeholder: Firefox 128 on Linux
+  - type: textarea
+    id: logs
+    attributes:
+      label: Additional context
+      description: Add sanitized logs, screenshots, or other useful context.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues for this problem.
+          required: true
+        - label: I removed credentials and private data from this report.
+          required: true

@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.log
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+
+# Runtime and generated data are mounted or regenerated, not baked into images.
+images/
+logs/
+pass1/
+pass2/
+
+# Test-only files are not needed in the production image.
+tests/
+requirements-dev.txt

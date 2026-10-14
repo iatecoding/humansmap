@@ -1,0 +1,15 @@
+{
+  "name": "humansmap-marketing-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Renderers and builders for docs/marketing (cards, large graphics, thumbnails, gallery).",
+  "scripts": {
+    "gallery": "node build-gallery.js",
+    "thumbs": "node render-gallery-thumbs.js ../../docs/marketing",
+    "cards": "node render-insight-cards.js ../../docs/marketing/insight-cards.html ../../docs/marketing/cards",
+    "card": "node render-card.js"
+  },
+  "dependencies": {
+    "playwright": "1.61.1"
+  }
+}

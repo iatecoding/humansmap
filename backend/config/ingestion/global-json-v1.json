@@ -1,0 +1,70 @@
+{
+  "version": "global-json-v1",
+  "description": "Candidate-only full Wikidata JSON ingestion policy. The dump URL is supplied at run time and must be pinned to a release.",
+  "source": {
+    "format": "json",
+    "url_env": "INGESTION_DUMP_URL",
+    "streaming": true,
+    "require_pinned_https_url": true
+  },
+  "execution": {
+    "enabled": true
+  },
+  "capacity_pass": {
+    "enabled": true,
+    "database": "SQLite with numeric QIDs and WITHOUT ROWID fact tables",
+    "thresholds": [10, 20, 30, 50],
+    "container_memory_mib": 1280,
+    "max_rss_mib": 900,
+    "min_free_gib": 25,
+    "writes_arangodb": false
+  },
+  "selection": {
+    "person_scope": "global",
+    "min_statements": 10,
+    "include_referenced_entities": true
+  },
+  "graph_nodes": [
+    "person",
+    "organization",
+    "event"
+  ],
+  "reference_only": [
+    "place",
+    "award",
+    "work",
+    "occupation",
+    "country",
+    "language"
+  ],
+  "edge_policy": {
+    "enabled_core_properties": [
+      "P26", "P22", "P25", "P40", "P3373", "P1038", "P451", "P184", "P185", "P1327",
+      "P108", "P39", "P102", "P463", "P69", "P54", "P1344", "P793",
+      "P169", "P3320", "P112", "P488", "P127", "P749", "P355", "P1830", "P710"
+    ],
+    "audit_before_enable": [
+      "P1416", "P1037", "P286", "P6087", "P1066", "P802", "P10449", "P1290"
+    ],
+    "deferred": [
+      "P3342"
+    ]
+  },
+  "storage": {
+    "retain_raw_dump": false,
+    "retain_capacity_index": true,
+    "retain_run_metadata": true,
+    "reference_storage": "compact documents and structured fields, never generic graph edges",
+    "statement_context": [
+      "statement_guid",
+      "rank",
+      "start_date",
+      "end_date",
+      "point_in_time",
+      "named_as",
+      "ordinal",
+      "original_subject",
+      "original_object"
+    ]
+  }
+}

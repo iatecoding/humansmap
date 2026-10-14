@@ -1,0 +1,98 @@
+# =============================================================================
+# robots.txt — humansmap.com
+# Strategy: allow Google + Bing for indexing, allow AI citation bots,
+#            block AI training scrapers and SEO audit tools.
+# =============================================================================
+
+# Licensed image derivatives remain attributable on their entity pages and in
+# structured data. The specific Allow keeps other internal APIs blocked.
+
+# Google — full access to indexable pages; skip internal API and OG generation.
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-News
+User-agent: Googlebot-Video
+User-agent: AdsBot-Google
+User-agent: Mediapartners-Google
+Allow: /api/images/
+Disallow: /api/
+Disallow: /og/
+
+# Lighthouse / PageSpeed Insights — unrestricted for performance audits
+User-agent: Chrome-Lighthouse
+User-agent: Lighthouse
+Disallow:
+
+# Bing — full access with a polite crawl delay
+User-agent: bingbot
+User-agent: msnbot
+User-agent: msnbot-media
+User-agent: bingpreview
+User-agent: bingbot-Image
+Crawl-delay: 60
+Allow: /api/images/
+Disallow: /api/
+Disallow: /og/
+
+# AI search and retrieval bots — allowed to discover and cite public content;
+# keep internal APIs and OG generation endpoints private.
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-Web
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+Disallow: /api/
+Disallow: /og/
+
+# Social sharing crawlers — allow share pages and OG images; keep internal APIs private.
+User-agent: FacebookBot
+User-agent: facebookexternalhit
+User-agent: Facebot
+User-agent: Twitterbot
+User-agent: LinkedInBot
+User-agent: Slackbot
+User-agent: Discordbot
+User-agent: TelegramBot
+User-agent: WhatsApp
+Allow: /
+Disallow: /api/
+
+# AI training scrapers — blocked; content is not licensed for model training
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: GPTBot
+User-agent: Google-Extended
+User-agent: CCBot
+User-agent: cohere-ai
+User-agent: Applebot-Extended
+User-agent: Amazonbot
+Disallow: /
+
+# SEO audit tools — blocked; they consume crawl budget without benefit
+User-agent: SemrushBot
+User-agent: AhrefsBot
+User-agent: DotBot
+User-agent: MJ12bot
+User-agent: BLEXBot
+User-agent: PetalBot
+User-agent: serpstatbot
+User-agent: Barkrowler
+Disallow: /
+
+# Search engines with no target audience overlap — blocked
+User-agent: Yandex
+User-agent: DuckDuckBot
+User-agent: Baiduspider
+User-agent: Sogou
+User-agent: 360Spider
+User-agent: Bytespider
+Disallow: /
+
+# All other bots — blocked by default
+User-agent: *
+Disallow: /
+
+Sitemap: https://humansmap.com/sitemap.xml

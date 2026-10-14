@@ -1,0 +1,1935 @@
+{
+  "_meta": {
+    "description": "Small real demo graph for HumansMap.",
+    "source": "Wikidata (CC0 1.0), a curated slice of the live graph",
+    "license": "CC0-1.0",
+    "note": "Extracted from the live ArangoDB graph via exported path subgraphs. Real public figures and real relations. QIDs are the actual Wikidata identifiers.",
+    "load": "python backend/scripts/seed_demo_data.py"
+  },
+  "persons": [
+    {
+      "_key": "Q16397",
+      "wikidata_id": "Q16397",
+      "name_en": "Bruce Lee",
+      "name_it": "Bruce Lee",
+      "description_en": "Hong Kong–American martial artist and actor (1940–1973)",
+      "description_it": "artista marziale, attore, regista, sceneggiatore e produttore cinematografico cinese con cittadinanza statunitense (1940–1973)",
+      "occupations": [
+        "film_director",
+        "television_actor",
+        "film_actor",
+        "writer",
+        "film_producer",
+        "screenwriter",
+        "actor"
+      ],
+      "primary_occupation": "film_director",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1940-11-27T00:00:00Z",
+      "death_date": "1973-07-20T00:00:00Z",
+      "wikidata_statements_count": 316
+    },
+    {
+      "_key": "Q6523730",
+      "wikidata_id": "Q6523730",
+      "name_en": "Leo Fong",
+      "name_it": "Leo Fong",
+      "description_en": "American actor",
+      "description_it": "attore cinese-statunitense (1928-2022)",
+      "occupations": [
+        "actor",
+        "screenwriter",
+        "film_producer",
+        "film_director"
+      ],
+      "primary_occupation": "actor",
+      "nationalities": [
+        "CN"
+      ],
+      "gender": "male",
+      "birth_date": "1928-11-23",
+      "death_date": "2022-02-18",
+      "wikidata_statements_count": 60
+    },
+    {
+      "_key": "Q698275",
+      "wikidata_id": "Q698275",
+      "name_en": "Wayne Thiebaud",
+      "name_it": "Wayne Thiebaud",
+      "description_en": "American painter (1920–2021)",
+      "description_it": "pittore statunitense (1920-2021)",
+      "occupations": [
+        "painter",
+        "university_teacher",
+        "sculptor",
+        "printmaker"
+      ],
+      "primary_occupation": "painter",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1920-11-15",
+      "death_date": "2021-12-25",
+      "wikidata_statements_count": 148
+    },
+    {
+      "_key": "Q8016",
+      "wikidata_id": "Q8016",
+      "name_en": "Winston Churchill",
+      "name_it": "Winston Churchill",
+      "description_en": "British statesman, soldier and writer (1874–1965)",
+      "description_it": "politico, storico, giornalista e militare britannico (1874-1965)",
+      "occupations": [
+        "politician",
+        "historian"
+      ],
+      "primary_occupation": "politician",
+      "nationalities": [
+        "GB"
+      ],
+      "gender": "male",
+      "birth_date": "1874-11-30",
+      "death_date": "1965-01-24",
+      "wikidata_statements_count": 644
+    },
+    {
+      "_key": "Q255",
+      "wikidata_id": "Q255",
+      "name_en": "Ludwig van Beethoven",
+      "name_it": "Ludwig van Beethoven",
+      "description_en": "German composer (1770-1827)",
+      "description_it": "compositore, pianista e direttore d'orchestra tedesco (1770-1827)",
+      "occupations": [
+        "composer"
+      ],
+      "primary_occupation": "composer",
+      "gender": "male",
+      "birth_date": "1770-12-16T00:00:00Z",
+      "death_date": "1827-03-26T00:00:00Z",
+      "wikidata_statements_count": 566
+    },
+    {
+      "_key": "Q83155",
+      "wikidata_id": "Q83155",
+      "name_en": "Jacques-Louis David",
+      "name_it": "Jacques-Louis David",
+      "description_en": "French painter (1748–1825)",
+      "description_it": "pittore francese (1748-1825)",
+      "occupations": [
+        "painter",
+        "politician"
+      ],
+      "primary_occupation": "painter",
+      "nationalities": [
+        "FR"
+      ],
+      "gender": "male",
+      "birth_date": "1748-08-30T00:00:00Z",
+      "death_date": "1825-12-29T00:00:00Z",
+      "wikidata_statements_count": 424
+    },
+    {
+      "_key": "Q517",
+      "wikidata_id": "Q517",
+      "name_en": "Napoleon",
+      "name_it": "Napoleone Bonaparte",
+      "description_en": "French military leader, French Emperor 1804–1814 and again in 1815 (1769–1821)",
+      "description_it": "politico e generale francese (1769–1821), primo console (1799–1804) e imperatore (r. 1804–1815) di Francia",
+      "occupations": [
+        "politician"
+      ],
+      "primary_occupation": "politician",
+      "nationalities": [
+        "FR"
+      ],
+      "gender": "male",
+      "birth_date": "1769-08-15",
+      "death_date": "1821-05-05",
+      "wikidata_statements_count": 584
+    },
+    {
+      "_key": "Q409",
+      "wikidata_id": "Q409",
+      "name_en": "Bob Marley",
+      "name_it": "Bob Marley",
+      "description_en": "Jamaican reggae musician (1945–1981)",
+      "description_it": "cantautore giamaicano",
+      "occupations": [
+        "singer",
+        "guitarist",
+        "composer"
+      ],
+      "primary_occupation": "singer",
+      "nationalities": [
+        "JM"
+      ],
+      "gender": "male",
+      "birth_date": "1945-02-06",
+      "death_date": "1981-05-11",
+      "wikidata_statements_count": 307
+    },
+    {
+      "_key": "Q1939373",
+      "wikidata_id": "Q1939373",
+      "name_en": "Rohan Marley",
+      "name_it": "Rohan Marley",
+      "description_en": "Son of Bob Marley",
+      "occupations": [
+        "musician",
+        "american_football_player",
+        "businessperson"
+      ],
+      "primary_occupation": "musician",
+      "nationalities": [
+        "JM"
+      ],
+      "gender": "male",
+      "birth_date": "1972-05-19",
+      "wikidata_statements_count": 48
+    },
+    {
+      "_key": "Q21166742",
+      "wikidata_id": "Q21166742",
+      "name_en": "William Joseph Whelan",
+      "description_en": "British-born American biochemist",
+      "nationalities": [
+        "GB",
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1924-11-14",
+      "death_date": "2021-06-05",
+      "wikidata_statements_count": 28
+    },
+    {
+      "_key": "Q9682",
+      "wikidata_id": "Q9682",
+      "name_en": "Elizabeth II",
+      "name_it": "Elisabetta II del Regno Unito",
+      "description_en": "Queen of the United Kingdom from 1952 to 2022 (1926–2022)",
+      "description_it": "regina del Regno Unito e dei reami del Commonwealth (r. 1952-2022)",
+      "nationalities": [
+        "GB"
+      ],
+      "gender": "female",
+      "birth_date": "1926-04-21",
+      "death_date": "2022-09-08",
+      "wikidata_statements_count": 552
+    },
+    {
+      "_key": "Q5582",
+      "wikidata_id": "Q5582",
+      "name_en": "Vincent van Gogh",
+      "name_it": "Vincent van Gogh",
+      "description_en": "Dutch painter (1853–1890)",
+      "description_it": "pittore olandese (1853-1890)",
+      "occupations": [
+        "painter",
+        "printmaker"
+      ],
+      "primary_occupation": "painter",
+      "gender": "male",
+      "birth_date": "1853-03-30",
+      "death_date": "1890-07-29",
+      "wikidata_statements_count": 610
+    },
+    {
+      "_key": "Q4140958",
+      "wikidata_id": "Q4140958",
+      "name_en": "Wil van Gogh",
+      "name_it": "Wil van Gogh",
+      "description_en": "Dutch feminist and the sister of Vincent and Theo van Gogh (1862–1941)",
+      "gender": "female",
+      "birth_date": "1862-03-16",
+      "death_date": "1941-05-17",
+      "wikidata_statements_count": 45
+    },
+    {
+      "_key": "Q1879957",
+      "wikidata_id": "Q1879957",
+      "name_en": "Ewine van Dishoeck",
+      "name_it": "Ewine van Dishoeck",
+      "description_en": "Dutch astronomer and chemist",
+      "description_it": "astronoma e chimica nederlandese",
+      "occupations": [
+        "chemist",
+        "university_teacher"
+      ],
+      "primary_occupation": "chemist",
+      "gender": "female",
+      "birth_date": "1955-06-13T00:00:00Z",
+      "wikidata_statements_count": 94
+    },
+    {
+      "_key": "Q19837",
+      "wikidata_id": "Q19837",
+      "name_en": "Steve Jobs",
+      "description_en": "American entrepreneur; co-founder of Apple Inc. (1955–2011)",
+      "description_it": "imprenditore e inventore statunitense (1955–2011)",
+      "occupations": [
+        "entrepreneur",
+        "film_producer",
+        "financier"
+      ],
+      "primary_occupation": "entrepreneur",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1955-02-24",
+      "death_date": "2011-10-05",
+      "wikidata_statements_count": 279
+    },
+    {
+      "_key": "Q5588",
+      "wikidata_id": "Q5588",
+      "name_en": "Frida Kahlo",
+      "name_it": "Frida Kahlo",
+      "description_en": "Mexican painter (1907–1954)",
+      "description_it": "pittrice messicana (1907-1954)",
+      "occupations": [
+        "painter"
+      ],
+      "primary_occupation": "painter",
+      "nationalities": [
+        "MX"
+      ],
+      "gender": "female",
+      "birth_date": "1907-07-06",
+      "death_date": "1954-07-13",
+      "wikidata_statements_count": 299
+    },
+    {
+      "_key": "Q9028569",
+      "wikidata_id": "Q9028569",
+      "name_en": "Marcelino Perelló Valls",
+      "description_en": "Mexican student leader",
+      "occupations": [
+        "mathematician",
+        "journalist"
+      ],
+      "primary_occupation": "mathematician",
+      "nationalities": [
+        "MX"
+      ],
+      "gender": "male",
+      "birth_date": "1944-00-00",
+      "death_date": "2017-08-05",
+      "wikidata_statements_count": 21
+    },
+    {
+      "_key": "Q17300754",
+      "wikidata_id": "Q17300754",
+      "name_en": "Carles Perelló i Valls",
+      "name_it": "Carles Perelló i Valls",
+      "description_en": "Spanish engineer",
+      "occupations": [
+        "engineer",
+        "mathematician"
+      ],
+      "primary_occupation": "engineer",
+      "nationalities": [
+        "ES"
+      ],
+      "gender": "male",
+      "birth_date": "1932-10-19",
+      "death_date": "2021-01-27",
+      "wikidata_statements_count": 51
+    },
+    {
+      "_key": "Q317521",
+      "wikidata_id": "Q317521",
+      "name_en": "Elon Musk",
+      "name_it": "Elon Musk",
+      "description_en": "American businessman (born 1971)",
+      "description_it": "imprenditore e politico sudafricano, con cittadinanza canadese, naturalizzato statunitense (1971–)",
+      "occupations": [
+        "engineer",
+        "entrepreneur",
+        "investor",
+        "politician",
+        "civil_servant",
+        "financier",
+        "philanthropist"
+      ],
+      "primary_occupation": "engineer",
+      "nationalities": [
+        "ZA",
+        "CA",
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1971-06-28T00:00:00Z",
+      "wikidata_statements_count": 465
+    },
+    {
+      "_key": "Q5593",
+      "wikidata_id": "Q5593",
+      "name_en": "Pablo Picasso",
+      "description_en": "Spanish painter and sculptor (1881–1973)",
+      "description_it": "pittore, scultore e litografo spagnolo (1881-1973)",
+      "occupations": [
+        "painter",
+        "sculptor",
+        "printmaker",
+        "photographer",
+        "screenwriter",
+        "poet",
+        "writer",
+        "film_actor"
+      ],
+      "primary_occupation": "painter",
+      "nationalities": [
+        "ES"
+      ],
+      "gender": "male",
+      "birth_date": "1881-10-25",
+      "death_date": "1973-04-08",
+      "wikidata_statements_count": 801
+    },
+    {
+      "_key": "Q236161",
+      "wikidata_id": "Q236161",
+      "name_en": "Dora Maar",
+      "name_it": "Dora Maar",
+      "description_en": "French photographer and painter (1907–1997)",
+      "description_it": "fotografa, poetessa e pittrice francese",
+      "occupations": [
+        "photographer",
+        "painter",
+        "poet",
+        "sculptor",
+        "model",
+        "writer"
+      ],
+      "primary_occupation": "photographer",
+      "nationalities": [
+        "FR"
+      ],
+      "gender": "female",
+      "birth_date": "1907-11-22",
+      "death_date": "1997-07-16",
+      "wikidata_statements_count": 185
+    },
+    {
+      "_key": "Q459378",
+      "wikidata_id": "Q459378",
+      "name_en": "Beatrice Wood",
+      "name_it": "Beatrice Wood",
+      "description_en": "American artist (1893-1998)",
+      "description_it": "artista e ceramista statunitense",
+      "occupations": [
+        "painter",
+        "sculptor",
+        "writer"
+      ],
+      "primary_occupation": "painter",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "female",
+      "birth_date": "1893-03-03",
+      "death_date": "1998-03-12",
+      "wikidata_statements_count": 103
+    },
+    {
+      "_key": "Q3078773",
+      "wikidata_id": "Q3078773",
+      "name_en": "Debbie Rowe",
+      "name_it": "Debbie Rowe",
+      "description_en": "former wife of Michael Jackson",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "female",
+      "birth_date": "1958-12-06",
+      "wikidata_statements_count": 28
+    },
+    {
+      "_key": "Q2831",
+      "wikidata_id": "Q2831",
+      "name_en": "Michael Jackson",
+      "name_it": "Michael Jackson",
+      "description_en": "American singer, songwriter, record producer, and dancer (1958–2009)",
+      "description_it": "cantautore, ballerino, coreografo, compositore, produttore discografico e filantropo statunitense (1958–2009)",
+      "occupations": [
+        "musician",
+        "philanthropist",
+        "singer",
+        "composer"
+      ],
+      "primary_occupation": "musician",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1958-08-29T00:00:00Z",
+      "death_date": "2009-06-25T00:00:00Z",
+      "wikidata_statements_count": 631
+    },
+    {
+      "_key": "Q635",
+      "wikidata_id": "Q635",
+      "name_en": "Cleopatra",
+      "name_it": "Κλεοπάτρα Φιλοπάτωρ",
+      "description_en": "queen of the Ptolemaic Kingdom of Egypt from 51 to 30 BCE",
+      "description_it": "ultima regina del regno tolemaico d'Egitto",
+      "gender": "female",
+      "birth_date": "-0068-01-11T00:00:00Z",
+      "death_date": "-0029-08-10T00:00:00Z",
+      "wikidata_statements_count": 283
+    },
+    {
+      "_key": "Q40013",
+      "wikidata_id": "Q40013",
+      "name_en": "Arsinoe IV of Egypt",
+      "name_it": "Arsinoe IV",
+      "description_en": "Queen of Ptolemaic Egypt from 48 BC to 47 BC",
+      "description_it": "regina egizia",
+      "gender": "female",
+      "birth_date": "-0068-01-01",
+      "death_date": "-0041-01-01",
+      "wikidata_statements_count": 46
+    },
+    {
+      "_key": "Q102231842",
+      "wikidata_id": "Q102231842",
+      "name_en": "Chukuka Okonjo",
+      "description_en": "Dr. rer. nat. Universität zu Köln 1962 Nigerian mathematician and economist",
+      "occupations": [
+        "mathematician",
+        "economist",
+        "university_teacher"
+      ],
+      "primary_occupation": "mathematician",
+      "nationalities": [
+        "NG"
+      ],
+      "gender": "male",
+      "birth_date": "1928-06-21",
+      "death_date": "2019-09-13",
+      "wikidata_statements_count": 47
+    },
+    {
+      "_key": "Q11459",
+      "wikidata_id": "Q11459",
+      "name_en": "Serena Williams",
+      "name_it": "Serena Williams",
+      "description_en": "American tennis player (born 1981)",
+      "description_it": "tennista statunitense (1981)",
+      "occupations": [
+        "tennis_player",
+        "actor",
+        "businessperson",
+        "writer"
+      ],
+      "primary_occupation": "tennis_player",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "female",
+      "birth_date": "1981-09-26T00:00:00Z",
+      "wikidata_statements_count": 274
+    },
+    {
+      "_key": "Q692",
+      "wikidata_id": "Q692",
+      "name_en": "William Shakespeare",
+      "description_en": "English playwright and poet (1564–1616)",
+      "description_it": "drammaturgo e poeta inglese (1564–1616)",
+      "occupations": [
+        "poet",
+        "actor",
+        "writer"
+      ],
+      "primary_occupation": "poet",
+      "gender": "male",
+      "birth_date": "1564-04-00",
+      "death_date": "1616-04-23",
+      "wikidata_statements_count": 888
+    },
+    {
+      "_key": "Q2794279",
+      "wikidata_id": "Q2794279",
+      "name_en": "Susanna Hall",
+      "name_it": "Susanna Hall",
+      "description_en": "eldest child and older daughter of William Shakespeare",
+      "description_it": "figlia maggiore di William Shakespeare",
+      "occupations": [
+        "poet",
+        "writer"
+      ],
+      "primary_occupation": "poet",
+      "gender": "female",
+      "birth_date": "1583-05-26",
+      "death_date": "1649-07-11",
+      "wikidata_statements_count": 40
+    },
+    {
+      "_key": "Q5362380",
+      "wikidata_id": "Q5362380",
+      "name_en": "Elizabeth Bernard",
+      "name_it": "Elizabeth Hall",
+      "description_en": "granddaughter of William Shakespeare (1608-1670)",
+      "description_it": "nipote di William Shakespeare e sua ultima discendente nota",
+      "occupations": [
+        "writer"
+      ],
+      "primary_occupation": "writer",
+      "gender": "female",
+      "birth_date": "1608-02-21",
+      "death_date": "1670-02-17",
+      "wikidata_statements_count": 29
+    },
+    {
+      "_key": "Q13605172",
+      "wikidata_id": "Q13605172",
+      "name_en": "John Barnard",
+      "description_en": "English politician, died 1674; second husband of William Shakespeare's granddaughter Elizabeth",
+      "occupations": [
+        "politician"
+      ],
+      "primary_occupation": "politician",
+      "gender": "male",
+      "birth_date": "1604-08-23",
+      "death_date": "1674-03-05",
+      "wikidata_statements_count": 22
+    },
+    {
+      "_key": "Q1034181",
+      "wikidata_id": "Q1034181",
+      "name_en": "Algernon Sidney",
+      "name_it": "Algernon Sidney",
+      "description_en": "British politician and political theorist (1623-1683)",
+      "description_it": "politico inglese",
+      "occupations": [
+        "diplomat",
+        "politician",
+        "writer"
+      ],
+      "primary_occupation": "diplomat",
+      "gender": "male",
+      "birth_date": "1623-01-15",
+      "death_date": "1683-12-07",
+      "wikidata_statements_count": 126
+    },
+    {
+      "_key": "Q1000841",
+      "wikidata_id": "Q1000841",
+      "name_en": "Stephen A. Northway",
+      "name_it": "Stephen A. Northway",
+      "description_en": "American politician (1833-1898)",
+      "description_it": "politico statunitense",
+      "occupations": [
+        "politician",
+        "lawyer"
+      ],
+      "primary_occupation": "politician",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1833-06-19",
+      "death_date": "1898-09-08",
+      "wikidata_statements_count": 30
+    },
+    {
+      "_key": "Q967900",
+      "wikidata_id": "Q967900",
+      "name_en": "Thomas C. Sawyer",
+      "name_it": "Thomas C. Sawyer",
+      "description_en": "American politician (1945–2023)",
+      "description_it": "politico statunitense (1945-2023)",
+      "occupations": [
+        "politician",
+        "teacher"
+      ],
+      "primary_occupation": "politician",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1945-08-15",
+      "death_date": "2023-05-20",
+      "wikidata_statements_count": 53
+    },
+    {
+      "_key": "Q36159",
+      "wikidata_id": "Q36159",
+      "name_en": "LeBron James",
+      "name_it": "LeBron James",
+      "description_en": "American basketball player (born 1984)",
+      "description_it": "cestista statunitense (1984-)",
+      "occupations": [
+        "basketball_player",
+        "screenwriter",
+        "television_actor"
+      ],
+      "primary_occupation": "basketball_player",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1984-12-30T00:00:00Z",
+      "wikidata_statements_count": 291
+    },
+    {
+      "_key": "Q7186",
+      "wikidata_id": "Q7186",
+      "name_en": "Marie Curie",
+      "description_en": "Polish-born French physicist and chemist (1867–1934)",
+      "description_it": "fisica, chimica e matematica franco-polacca (1867–1934)",
+      "occupations": [
+        "physicist",
+        "chemist",
+        "university_teacher"
+      ],
+      "primary_occupation": "physicist",
+      "nationalities": [
+        "FR"
+      ],
+      "gender": "female",
+      "birth_date": "1867-11-07T00:00:00Z",
+      "death_date": "1934-07-04T00:00:00Z",
+      "wikidata_statements_count": 427
+    },
+    {
+      "_key": "Q434513",
+      "wikidata_id": "Q434513",
+      "name_en": "Alice Waters",
+      "name_it": "Alice Waters",
+      "description_en": "American chef, activist, and author",
+      "occupations": [
+        "writer",
+        "teacher"
+      ],
+      "primary_occupation": "writer",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "female",
+      "birth_date": "1944-04-28",
+      "wikidata_statements_count": 75
+    },
+    {
+      "_key": "Q4616",
+      "wikidata_id": "Q4616",
+      "name_en": "Marilyn Monroe",
+      "name_it": "Marilyn Monroe",
+      "description_en": "American actress and model (1926–1962)",
+      "description_it": "attrice, cantante, modella e produttrice cinematografica statunitense (1926-1962)",
+      "occupations": [
+        "film_actor",
+        "film_producer",
+        "singer",
+        "actor",
+        "musician"
+      ],
+      "primary_occupation": "film_actor",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "female",
+      "birth_date": "1926-06-01",
+      "death_date": "1962-08-04",
+      "wikidata_statements_count": 549
+    },
+    {
+      "_key": "Q720",
+      "wikidata_id": "Q720",
+      "name_en": "Genghis Khan",
+      "name_it": "Чингис хаан",
+      "description_en": "founder and first khan of the Mongol Empire (1162–1227)",
+      "description_it": "condottiero e sovrano mongolo, fondatore e primo grande Khan dell'impero mongolo",
+      "gender": "male",
+      "birth_date": "1162-06-07T00:00:00Z",
+      "death_date": "1227-09-01T00:00:00Z",
+      "wikidata_statements_count": 260
+    },
+    {
+      "_key": "Q1378067",
+      "wikidata_id": "Q1378067",
+      "name_en": "Godan Khan",
+      "name_it": "Godan Khan",
+      "description_en": "Mongolian khan, second son of ögödei",
+      "nationalities": [
+        "MN"
+      ],
+      "gender": "male",
+      "birth_date": "1206-01-01",
+      "death_date": "1251-01-01",
+      "wikidata_statements_count": 29
+    },
+    {
+      "_key": "Q11937813",
+      "wikidata_id": "Q11937813",
+      "name_en": "Muhammad Pulad Beg Khan",
+      "description_en": "Leader of Kokand uprising and Grandson of Alim Khan",
+      "gender": "male",
+      "birth_date": "1844-00-00",
+      "death_date": "1876-00-00",
+      "wikidata_statements_count": 15
+    },
+    {
+      "_key": "Q6829642",
+      "wikidata_id": "Q6829642",
+      "name_en": "Michael D. Lumpkin",
+      "name_it": "Michael D. Lumpkin",
+      "description_en": "American government official",
+      "occupations": [
+        "military_officer"
+      ],
+      "primary_occupation": "military_officer",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1964-10-14",
+      "wikidata_statements_count": 22
+    },
+    {
+      "_key": "Q19848",
+      "wikidata_id": "Q19848",
+      "name_en": "Lady Gaga",
+      "name_it": "Stefani Joanne Angelina Germanotta",
+      "description_en": "American singer-songwriter and actress (born 1986)",
+      "description_it": "cantautrice, compositrice, attrice e attivista statunitense (1986-)",
+      "occupations": [
+        "singer"
+      ],
+      "primary_occupation": "singer",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "female",
+      "birth_date": "1986-03-28T00:00:00Z",
+      "wikidata_statements_count": 673
+    },
+    {
+      "_key": "Q7259",
+      "wikidata_id": "Q7259",
+      "name_en": "Ada Lovelace",
+      "name_it": "Ada Lovelace",
+      "description_en": "English mathematician (1815–1852)",
+      "description_it": "matematica britannica, considerata la prima programmatrice",
+      "occupations": [
+        "mathematician",
+        "poet",
+        "writer",
+        "engineer"
+      ],
+      "primary_occupation": "mathematician",
+      "gender": "female",
+      "birth_date": "1815-12-10",
+      "death_date": "1852-11-27",
+      "wikidata_statements_count": 200
+    },
+    {
+      "_key": "Q102365643",
+      "wikidata_id": "Q102365643",
+      "name_en": "Mark R. Shinwell",
+      "description_en": "Ph.D. University of Cambridge 2005",
+      "gender": "male",
+      "wikidata_statements_count": 9
+    },
+    {
+      "_key": "Q15935",
+      "wikidata_id": "Q15935",
+      "name_en": "Kanye West",
+      "description_en": "American rapper and record producer",
+      "description_it": "musicista statunitense (1977-)",
+      "occupations": [
+        "record_producer",
+        "singer",
+        "fashion_designer",
+        "businessperson",
+        "musician",
+        "investor",
+        "entrepreneur"
+      ],
+      "primary_occupation": "record_producer",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1977-06-08",
+      "wikidata_statements_count": 317
+    },
+    {
+      "_key": "Q9036",
+      "wikidata_id": "Q9036",
+      "name_en": "Nikola Tesla",
+      "name_it": "Nikola Tesla",
+      "description_en": "Serbian-American engineer and inventor (1856–1943)",
+      "description_it": "fisico, inventore e ingegnere nato nell'Impero Austro-Ungarico, naturalizzato statunitense",
+      "occupations": [
+        "physicist"
+      ],
+      "primary_occupation": "physicist",
+      "nationalities": [
+        "HU",
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1856-07-10",
+      "death_date": "1943-01-07",
+      "wikidata_statements_count": 292
+    },
+    {
+      "_key": "Q725940",
+      "wikidata_id": "Q725940",
+      "name_en": "Sumner Redstone",
+      "name_it": "Sumner Redstone",
+      "description_en": "American businessman and media magnate (1923-2020)",
+      "occupations": [
+        "entrepreneur",
+        "businessperson"
+      ],
+      "primary_occupation": "entrepreneur",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1923-05-27",
+      "death_date": "2020-08-11",
+      "wikidata_statements_count": 66
+    },
+    {
+      "_key": "Q36153",
+      "wikidata_id": "Q36153",
+      "name_en": "Beyoncé",
+      "name_it": "Beyoncé",
+      "description_en": "American singer-songwriter (born 1981)",
+      "description_it": "cantautrice, ballerina, attrice e imprenditrice statunitense (1981-)",
+      "occupations": [
+        "singer",
+        "record_producer",
+        "actor",
+        "businessperson",
+        "composer",
+        "musician"
+      ],
+      "primary_occupation": "singer",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "female",
+      "birth_date": "1981-09-04",
+      "wikidata_statements_count": 500
+    },
+    {
+      "_key": "Q937",
+      "wikidata_id": "Q937",
+      "name_en": "Albert Einstein",
+      "name_it": "Albert Einstein",
+      "description_en": "German-born theoretical physicist (1879–1955)",
+      "description_it": "fisico svizzero-tedesco e statunitense (1879–1955)",
+      "occupations": [
+        "university_teacher",
+        "physicist",
+        "philosopher",
+        "writer",
+        "scientist",
+        "mathematician"
+      ],
+      "primary_occupation": "university_teacher",
+      "nationalities": [
+        "CH",
+        "DE",
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1879-03-14T00:00:00Z",
+      "death_date": "1955-04-18T00:00:00Z",
+      "wikidata_statements_count": 661
+    },
+    {
+      "_key": "Q13133",
+      "wikidata_id": "Q13133",
+      "name_en": "Michelle Obama",
+      "name_it": "Michelle Obama",
+      "description_en": "lawyer and former First Lady of the United States (2009-2017)",
+      "description_it": "avvocato e First Lady statunitense",
+      "occupations": [
+        "lawyer",
+        "writer",
+        "politician",
+        "podcaster",
+        "sociologist"
+      ],
+      "primary_occupation": "lawyer",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "female",
+      "birth_date": "1964-01-17",
+      "wikidata_statements_count": 259
+    },
+    {
+      "_key": "Q6758256",
+      "wikidata_id": "Q6758256",
+      "name_en": "Marcus Jordan",
+      "name_it": "Marcus Jordan",
+      "description_en": "American basketball player; son of basketball player Michael Jordan",
+      "description_it": "cestista statunitense",
+      "occupations": [
+        "basketball_player"
+      ],
+      "primary_occupation": "basketball_player",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1990-12-24",
+      "wikidata_statements_count": 37
+    },
+    {
+      "_key": "Q41421",
+      "wikidata_id": "Q41421",
+      "name_en": "Michael Jordan",
+      "name_it": "Michael Jeffrey Jordan",
+      "description_en": "American basketball player and businessman (born 1963)",
+      "description_it": "dirigente sportivo, imprenditore e cestista statunitense (1963-)",
+      "occupations": [
+        "basketball_player",
+        "baseball_player",
+        "entrepreneur"
+      ],
+      "primary_occupation": "basketball_player",
+      "nationalities": [
+        "US"
+      ],
+      "gender": "male",
+      "birth_date": "1963-02-17T00:00:00Z",
+      "wikidata_statements_count": 344
+    }
+  ],
+  "organizations": [
+    {
+      "_key": "Q1026941",
+      "wikidata_id": "Q1026941",
+      "name_en": "California State University, Sacramento",
+      "description_en": "public university in Sacramento, California, United States",
+      "type": "organization",
+      "country_id": "Q30",
+      "founded": "1947-01-01T00:00:00Z",
+      "wikidata_statements_count": 67
+    },
+    {
+      "_key": "Q463303",
+      "wikidata_id": "Q463303",
+      "name_en": "American Academy of Arts and Sciences",
+      "name_it": "American Academy of Arts and Sciences",
+      "description_en": "United States honorary society and policy research center",
+      "type": "organization",
+      "country_id": "Q30",
+      "founded": "1780-05-04T00:00:00Z",
+      "wikidata_statements_count": 103
+    },
+    {
+      "_key": "Q253439",
+      "wikidata_id": "Q253439",
+      "name_en": "Royal Netherlands Academy of Arts and Sciences",
+      "name_it": "Koninklijke Nederlandse Akademie van Wetenschappen",
+      "description_en": "Dutch learned society",
+      "description_it": "associazione di scienziati dei Paesi Bassi",
+      "type": "organization",
+      "country_id": "Q55",
+      "founded": "1808-01-01T00:00:00Z"
+    },
+    {
+      "_key": "Q738258",
+      "wikidata_id": "Q738258",
+      "name_en": "University of Miami",
+      "name_it": "Università di Miami",
+      "description_en": "private university in Coral Gables, Florida, United States",
+      "type": "organization",
+      "country_id": "Q30",
+      "founded": "1925-01-01T00:00:00Z",
+      "wikidata_statements_count": 183
+    },
+    {
+      "_key": "Q123885",
+      "wikidata_id": "Q123885",
+      "name_en": "Royal Society of London",
+      "name_it": "Royal Society",
+      "description_en": "English learned society for science",
+      "description_it": "accademia nazionale inglese delle scienze",
+      "type": "organization",
+      "country_id": "Q145",
+      "founded": "1660-11-01T00:00:00Z",
+      "wikidata_statements_count": 189
+    },
+    {
+      "_key": "Q156598",
+      "wikidata_id": "Q156598",
+      "name_en": "Leiden University",
+      "name_it": "Università di Leida",
+      "description_en": "public university in the Netherlands",
+      "description_it": "università di Leida, Paesi Bassi",
+      "type": "organization",
+      "country_id": "Q55",
+      "founded": "1575-02-18T00:00:00Z",
+      "wikidata_statements_count": 189
+    },
+    {
+      "_key": "Q2054610",
+      "wikidata_id": "Q2054610",
+      "name_en": "Mexican Communist Party",
+      "name_it": "Partito Comunista Messicano",
+      "description_en": "communist political party in Mexico (1917 - 1981)",
+      "description_it": "partito politico messicano (1918-1981)",
+      "type": "organization",
+      "country_id": "Q96",
+      "founded": "1919-11-24T00:00:00Z",
+      "wikidata_statements_count": 24
+    },
+    {
+      "_key": "Q140686",
+      "wikidata_id": "Q140686",
+      "name_en": "chairperson",
+      "name_it": "presidente",
+      "description_en": "leading or presiding officer of an organized group",
+      "description_it": "persona che presiede un gruppo organizzato come un consiglio, un comitato o un'assemblea",
+      "type": "position",
+      "wikidata_statements_count": 80
+    },
+    {
+      "_key": "Q337480",
+      "wikidata_id": "Q337480",
+      "name_en": "Académie Julian",
+      "name_it": "Académie Julian",
+      "description_en": "former art school in Paris, France",
+      "description_it": "scuola d'arte a Parigi (1867-1968)",
+      "type": "organization",
+      "country_id": "Q142",
+      "founded": "1867-01-01T00:00:00Z",
+      "wikidata_statements_count": 40
+    },
+    {
+      "_key": "Q5882770",
+      "wikidata_id": "Q5882770",
+      "name_en": "Hollywood High School",
+      "description_en": "high school in California, United States",
+      "type": "secondary_school",
+      "country_id": "Q30",
+      "founded": "1903-01-01",
+      "wikidata_statements_count": 25
+    },
+    {
+      "_key": "Q116",
+      "wikidata_id": "Q116",
+      "name_en": "monarch",
+      "name_it": "monarca",
+      "description_en": "person at the head of a monarchy",
+      "description_it": "capo di Stato di una monarchia",
+      "type": "position",
+      "wikidata_statements_count": 79
+    },
+    {
+      "_key": "Q1065",
+      "wikidata_id": "Q1065",
+      "name_en": "United Nations",
+      "name_it": "Organizzazione delle Nazioni Unite",
+      "description_en": "global international and intergovernmental organization",
+      "description_it": "organizzazione internazionale con sede a New York (fondata con la firma dello Statuto il 26 giugno 1945)",
+      "type": "organization",
+      "country_id": "Q30",
+      "founded": "1945-10-24T00:00:00Z",
+      "wikidata_statements_count": 456
+    },
+    {
+      "_key": "Q740308",
+      "wikidata_id": "Q740308",
+      "name_en": "UNICEF",
+      "name_it": "Fondo delle Nazioni Unite per l'infanzia",
+      "description_en": "specialised agency of the United Nations",
+      "description_it": "organizzazione della politica di sviluppo delle Nazioni Unite",
+      "type": "organization",
+      "country_id": "Q30",
+      "founded": "1946-12-11T00:00:00Z"
+    },
+    {
+      "_key": "Q18018860",
+      "wikidata_id": "Q18018860",
+      "name_en": "Member of Parliament in the Parliament of England",
+      "name_it": "membro della Camera dei comuni del Regno d'Inghilterra",
+      "description_en": "representative in the House of Commons of the Parliament of England to 1707",
+      "description_it": "membro della Camera dei comuni inglese fino al 1707",
+      "type": "position",
+      "country_id": "Q179876",
+      "wikidata_statements_count": 8
+    },
+    {
+      "_key": "Q29468",
+      "wikidata_id": "Q29468",
+      "name_en": "Republican Party",
+      "name_it": "Partito Repubblicano",
+      "description_en": "American political party",
+      "description_it": "partito politico statunitense",
+      "type": "organization",
+      "country_id": "Q30",
+      "founded": "1854-03-20T00:00:00Z",
+      "wikidata_statements_count": 141
+    },
+    {
+      "_key": "Q17502533",
+      "wikidata_id": "Q17502533",
+      "name_en": "Ohio state representative",
+      "name_it": "membro della Camera dei rappresentanti dell'Ohio",
+      "description_en": "legislative position",
+      "type": "position",
+      "country_id": "Q30",
+      "wikidata_statements_count": 13
+    },
+    {
+      "_key": "Q4982743",
+      "wikidata_id": "Q4982743",
+      "name_en": "Buchtel High School",
+      "description_en": "high school in Ohio, United States",
+      "type": "secondary_school",
+      "country_id": "Q30",
+      "founded": "1931-00-00",
+      "wikidata_statements_count": 19
+    },
+    {
+      "_key": "Q466089",
+      "wikidata_id": "Q466089",
+      "name_en": "American Philosophical Society",
+      "name_it": "American Philosophical Society",
+      "description_en": "American scholarly organization and learned society",
+      "type": "organization",
+      "country_id": "Q30",
+      "founded": "1743-01-01T00:00:00Z",
+      "wikidata_statements_count": 143
+    },
+    {
+      "_key": "Q4008476",
+      "wikidata_id": "Q4008476",
+      "name_en": "Van Nuys High School",
+      "name_it": "Van Nuys High School",
+      "description_en": "high school in Van Nuys, Los Angeles, California, United States",
+      "type": "secondary_school",
+      "country_id": "Q30",
+      "founded": "1914-01-01",
+      "wikidata_statements_count": 20
+    },
+    {
+      "_key": "Q181888",
+      "wikidata_id": "Q181888",
+      "name_en": "khan",
+      "name_it": "khan",
+      "description_en": "ruler in Mongol and Turkic cultures, variously describing kings, princes, and governors",
+      "description_it": "titolo mongolo e turcico",
+      "type": "position",
+      "wikidata_statements_count": 31
+    },
+    {
+      "_key": "Q1251441",
+      "wikidata_id": "Q1251441",
+      "name_en": "leader",
+      "name_it": "capo",
+      "description_en": "someone with the authority to affect the conduct of others; who have the responsibility of leading",
+      "description_it": "in un gruppo sociale, chi ricopre un ruolo di comando o direzione",
+      "type": "position",
+      "wikidata_statements_count": 34
+    },
+    {
+      "_key": "Q29552",
+      "wikidata_id": "Q29552",
+      "name_en": "Democratic Party",
+      "name_it": "Partito Democratico",
+      "description_en": "American political party",
+      "description_it": "partito politico statunitense",
+      "type": "organization",
+      "country_id": "Q30",
+      "founded": "1828-01-08T00:00:00Z",
+      "wikidata_statements_count": 180
+    },
+    {
+      "_key": "Q35794",
+      "wikidata_id": "Q35794",
+      "name_en": "University of Cambridge",
+      "name_it": "Università di Cambridge",
+      "description_en": "collegiate public research university in Cambridge, England, United Kingdom",
+      "description_it": "università del Regno Unito",
+      "type": "organization",
+      "country_id": "Q145",
+      "founded": "1209-01-01T00:00:00Z",
+      "wikidata_statements_count": 333
+    },
+    {
+      "_key": "Q17630723",
+      "wikidata_id": "Q17630723",
+      "name_en": "Jane Street Capital",
+      "name_it": "Jane Street Capital",
+      "description_en": "wholesaling platform",
+      "description_it": "fondo di trading proprietario",
+      "type": "company",
+      "country_id": "Q30",
+      "founded": "2000-00-00",
+      "wikidata_statements_count": 17
+    },
+    {
+      "_key": "Q420822",
+      "wikidata_id": "Q420822",
+      "name_en": "Gap Inc.",
+      "name_it": "Gap",
+      "description_en": "American multinational clothing and accessories retailer",
+      "description_it": "azienda statunitense",
+      "type": "company",
+      "country_id": "Q30",
+      "founded": "1969-00-00",
+      "wikidata_statements_count": 72
+    },
+    {
+      "_key": "Q632404",
+      "wikidata_id": "Q632404",
+      "name_en": "Westinghouse Electric Corporation",
+      "name_it": "Westinghouse Electric",
+      "description_en": "former American manufacturing company",
+      "description_it": "società statunitense nel settore di apparecchiature elettriche",
+      "type": "company",
+      "country_id": "Q30",
+      "founded": "1886-01-08",
+      "dissolved": "2000-00-00",
+      "wikidata_statements_count": 69
+    },
+    {
+      "_key": "Q214346",
+      "wikidata_id": "Q214346",
+      "name_en": "Viacom",
+      "name_it": "Viacom",
+      "description_en": "American mass media company (2005–2019)",
+      "description_it": "società televisiva statunitense",
+      "type": "company",
+      "country_id": "Q30",
+      "founded": "2005-12-31",
+      "dissolved": "2019-12-04",
+      "wikidata_statements_count": 124
+    },
+    {
+      "_key": "Q7996715",
+      "wikidata_id": "Q7996715",
+      "name_en": "Whitney M. Young Magnet High School",
+      "description_en": "Magnet High School in Chicago, Illinois",
+      "type": "secondary_school",
+      "country_id": "Q30",
+      "founded": "1975-00-00",
+      "wikidata_statements_count": 15
+    }
+  ],
+  "events": [
+    {
+      "_key": "Q6534",
+      "wikidata_id": "Q6534",
+      "name_en": "French Revolution",
+      "name_it": "rivoluzione francese",
+      "description_en": "revolution in France from 1789 to 1799",
+      "description_it": "periodo di radicale sconvolgimento sociale, politico e culturale nella storia francese, che ha dato inizio all'età contemporanea",
+      "type": "event",
+      "date": "1789-05-05T00:00:00Z"
+    }
+  ],
+  "relationships": [
+    {
+      "_key": "Q6523730_Q16397_professional_collaborator_P1327",
+      "_from": "persons/Q6523730",
+      "_to": "persons/Q16397",
+      "type": "professional_collaborator",
+      "wikidata_property": "P1327"
+    },
+    {
+      "_key": "Q409_Q1939373_child_P40",
+      "_from": "persons/Q409",
+      "_to": "persons/Q1939373",
+      "type": "child",
+      "wikidata_property": "P40"
+    },
+    {
+      "_key": "Q5582_Q4140958_sibling_P3373",
+      "_from": "persons/Q5582",
+      "_to": "persons/Q4140958",
+      "type": "sibling",
+      "wikidata_property": "P3373"
+    },
+    {
+      "_key": "Q9028569_Q17300754_sibling_P3373",
+      "_from": "persons/Q9028569",
+      "_to": "persons/Q17300754",
+      "type": "sibling",
+      "wikidata_property": "P3373"
+    },
+    {
+      "_key": "Q5593_Q236161_unmarried_partner_P451",
+      "_from": "persons/Q5593",
+      "_to": "persons/Q236161",
+      "type": "unmarried_partner",
+      "wikidata_property": "P451",
+      "start_date": "1936-01-01",
+      "end_date": "1943-00-00"
+    },
+    {
+      "_key": "Q2831_Q3078773_spouse_P26",
+      "_from": "persons/Q2831",
+      "_to": "persons/Q3078773",
+      "type": "spouse",
+      "wikidata_property": "P26",
+      "start_date": "1996-11-15",
+      "end_date": "2000-04-00"
+    },
+    {
+      "_key": "Q40013_Q635_sibling_P3373",
+      "_from": "persons/Q40013",
+      "_to": "persons/Q635",
+      "type": "sibling",
+      "wikidata_property": "P3373"
+    },
+    {
+      "_key": "Q2794279_Q692_parent_P22",
+      "_from": "persons/Q2794279",
+      "_to": "persons/Q692",
+      "type": "parent",
+      "wikidata_property": "P22"
+    },
+    {
+      "_key": "Q5362380_Q2794279_parent_P25",
+      "_from": "persons/Q5362380",
+      "_to": "persons/Q2794279",
+      "type": "parent",
+      "wikidata_property": "P25"
+    },
+    {
+      "_key": "Q13605172_Q5362380_spouse_P26",
+      "_from": "persons/Q13605172",
+      "_to": "persons/Q5362380",
+      "type": "spouse",
+      "wikidata_property": "P26",
+      "start_date": "1649-06-05"
+    },
+    {
+      "_key": "Q1378067_Q720_relative_P1038",
+      "_from": "persons/Q1378067",
+      "_to": "persons/Q720",
+      "type": "relative",
+      "wikidata_property": "P1038"
+    },
+    {
+      "_key": "Q6758256_Q41421_parent_P22",
+      "_from": "persons/Q6758256",
+      "_to": "persons/Q41421",
+      "type": "parent",
+      "wikidata_property": "P22"
+    }
+  ],
+  "affiliations": [
+    {
+      "_key": "Q6523730_Q1026941_educated_at_P69",
+      "_from": "persons/Q6523730",
+      "_to": "organizations/Q1026941",
+      "type": "educated_at",
+      "wikidata_property": "P69"
+    },
+    {
+      "_key": "Q698275_Q1026941_educated_at_P69",
+      "_from": "persons/Q698275",
+      "_to": "organizations/Q1026941",
+      "type": "educated_at",
+      "wikidata_property": "P69",
+      "end_date": "1941-00-00"
+    },
+    {
+      "_key": "Q698275_Q463303_member_of_P463",
+      "_from": "persons/Q698275",
+      "_to": "organizations/Q463303",
+      "type": "member_of",
+      "wikidata_property": "P463"
+    },
+    {
+      "_key": "Q8016_Q463303_member_of_P463",
+      "_from": "persons/Q8016",
+      "_to": "organizations/Q463303",
+      "type": "member_of",
+      "wikidata_property": "P463",
+      "start_date": "1946-00-00"
+    },
+    {
+      "_key": "Q255_Q253439_member_of_P463",
+      "_from": "persons/Q255",
+      "_to": "organizations/Q253439",
+      "type": "member_of",
+      "wikidata_property": "P463"
+    },
+    {
+      "_key": "Q83155_Q253439_member_of_P463",
+      "_from": "persons/Q83155",
+      "_to": "organizations/Q253439",
+      "type": "member_of",
+      "wikidata_property": "P463"
+    },
+    {
+      "_key": "Q1939373_Q738258_educated_at_P69",
+      "_from": "persons/Q1939373",
+      "_to": "organizations/Q738258",
+      "type": "educated_at",
+      "wikidata_property": "P69"
+    },
+    {
+      "_key": "Q21166742_Q738258_employee_P108",
+      "_from": "persons/Q21166742",
+      "_to": "organizations/Q738258",
+      "type": "employee",
+      "wikidata_property": "P108"
+    },
+    {
+      "_key": "Q21166742_Q123885_member_of_P463",
+      "_from": "persons/Q21166742",
+      "_to": "organizations/Q123885",
+      "type": "member_of",
+      "wikidata_property": "P463"
+    },
+    {
+      "_key": "Q9682_Q123885_member_of_P463",
+      "_from": "persons/Q9682",
+      "_to": "organizations/Q123885",
+      "type": "member_of",
+      "wikidata_property": "P463",
+      "start_date": "1947-00-00"
+    },
+    {
+      "_key": "Q4140958_Q156598_educated_at_P69",
+      "_from": "persons/Q4140958",
+      "_to": "organizations/Q156598",
+      "type": "educated_at",
+      "wikidata_property": "P69"
+    },
+    {
+      "_key": "Q1879957_Q156598_employee_P108",
+      "_from": "persons/Q1879957",
+      "_to": "organizations/Q156598",
+      "type": "employee",
+      "wikidata_property": "P108",
+      "start_date": "1995-01-01"
+    },
+    {
+      "_key": "Q1879957_Q463303_member_of_P463",
+      "_from": "persons/Q1879957",
+      "_to": "organizations/Q463303",
+      "type": "member_of",
+      "wikidata_property": "P463"
+    },
+    {
+      "_key": "Q19837_Q463303_member_of_P463",
+      "_from": "persons/Q19837",
+      "_to": "organizations/Q463303",
+      "type": "member_of",
+      "wikidata_property": "P463"
+    },
+    {
+      "_key": "Q5588_Q2054610_member_of_P102",
+      "_from": "persons/Q5588",
+      "_to": "organizations/Q2054610",
+      "type": "member_of",
+      "wikidata_property": "P102",
+      "start_date": "1927-00-00",
+      "end_date": "1951-00-00"
+    },
+    {
+      "_key": "Q9028569_Q2054610_member_of_P102",
+      "_from": "persons/Q9028569",
+      "_to": "organizations/Q2054610",
+      "type": "member_of",
+      "wikidata_property": "P102",
+      "start_date": "1965-00-00"
+    },
+    {
+      "_key": "Q17300754_Q140686_position_held_P39",
+      "_from": "persons/Q17300754",
+      "_to": "organizations/Q140686",
+      "type": "position_held",
+      "wikidata_property": "P39",
+      "start_date": "2006-00-00",
+      "end_date": "2010-00-00"
+    },
+    {
+      "_key": "Q317521_Q140686_position_held_P39",
+      "_from": "persons/Q317521",
+      "_to": "organizations/Q140686",
+      "type": "position_held",
+      "wikidata_property": "P39",
+      "start_date": "2008-00-00",
+      "end_date": "2018-11-00"
+    },
+    {
+      "_key": "Q236161_Q337480_educated_at_P69",
+      "_from": "persons/Q236161",
+      "_to": "organizations/Q337480",
+      "type": "educated_at",
+      "wikidata_property": "P69"
+    },
+    {
+      "_key": "Q459378_Q337480_educated_at_P69",
+      "_from": "persons/Q459378",
+      "_to": "organizations/Q337480",
+      "type": "educated_at",
+      "wikidata_property": "P69"
+    },
+    {
+      "_key": "Q459378_Q5882770_educated_at_P69",
+      "_from": "persons/Q459378",
+      "_to": "organizations/Q5882770",
+      "type": "educated_at",
+      "wikidata_property": "P69"
+    },
+    {
+      "_key": "Q3078773_Q5882770_educated_at_P69",
+      "_from": "persons/Q3078773",
+      "_to": "organizations/Q5882770",
+      "type": "educated_at",
+      "wikidata_property": "P69"
+    },
+    {
+      "_key": "Q40013_Q116_position_held_P39",
+      "_from": "persons/Q40013",
+      "_to": "organizations/Q116",
+      "type": "position_held",
+      "wikidata_property": "P39",
+      "start_date": "-0048-00-00",
+      "end_date": "-0047-00-00"
+    },
+    {
+      "_key": "Q102231842_Q116_position_held_P39",
+      "_from": "persons/Q102231842",
+      "_to": "organizations/Q116",
+      "type": "position_held",
+      "wikidata_property": "P39",
+      "start_date": "2007-00-00",
+      "end_date": "2019-00-00"
+    },
+    {
+      "_key": "Q102231842_Q1065_employee_P108",
+      "_from": "persons/Q102231842",
+      "_to": "organizations/Q1065",
+      "type": "employee",
+      "wikidata_property": "P108",
+      "start_date": "1974-00-00",
+      "end_date": "2007-00-00"
+    },
+    {
+      "_key": "Q11459_Q740308_employee_P108",
+      "_from": "persons/Q11459",
+      "_to": "organizations/Q740308",
+      "type": "employee",
+      "wikidata_property": "P108"
+    },
+    {
+      "_key": "Q13605172_Q18018860_position_held_P39",
+      "_from": "persons/Q13605172",
+      "_to": "organizations/Q18018860",
+      "type": "position_held",
+      "wikidata_property": "P39"
+    },
+    {
+      "_key": "Q1034181_Q18018860_position_held_P39",
+      "_from": "persons/Q1034181",
+      "_to": "organizations/Q18018860",
+      "type": "position_held",
+      "wikidata_property": "P39"
+    },
+    {
+      "_key": "Q1034181_Q29468_member_of_P102",
+      "_from": "persons/Q1034181",
+      "_to": "organizations/Q29468",
+      "type": "member_of",
+      "wikidata_property": "P102"
+    },
+    {
+      "_key": "Q1000841_Q29468_member_of_P102",
+      "_from": "persons/Q1000841",
+      "_to": "organizations/Q29468",
+      "type": "member_of",
+      "wikidata_property": "P102"
+    },
+    {
+      "_key": "Q1000841_Q17502533_position_held_P39",
+      "_from": "persons/Q1000841",
+      "_to": "organizations/Q17502533",
+      "type": "position_held",
+      "wikidata_property": "P39"
+    },
+    {
+      "_key": "Q967900_Q17502533_position_held_P39",
+      "_from": "persons/Q967900",
+      "_to": "organizations/Q17502533",
+      "type": "position_held",
+      "wikidata_property": "P39",
+      "start_date": "1977-01-03",
+      "end_date": "1983-12-31"
+    },
+    {
+      "_key": "Q967900_Q4982743_educated_at_P69",
+      "_from": "persons/Q967900",
+      "_to": "organizations/Q4982743",
+      "type": "educated_at",
+      "wikidata_property": "P69"
+    },
+    {
+      "_key": "Q36159_Q4982743_educated_at_P69",
+      "_from": "persons/Q36159",
+      "_to": "organizations/Q4982743",
+      "type": "educated_at",
+      "wikidata_property": "P69"
+    },
+    {
+      "_key": "Q7186_Q466089_member_of_P463",
+      "_from": "persons/Q7186",
+      "_to": "organizations/Q466089",
+      "type": "member_of",
+      "wikidata_property": "P463",
+      "start_date": "1910-00-00"
+    },
+    {
+      "_key": "Q434513_Q466089_member_of_P463",
+      "_from": "persons/Q434513",
+      "_to": "organizations/Q466089",
+      "type": "member_of",
+      "wikidata_property": "P463"
+    },
+    {
+      "_key": "Q434513_Q4008476_educated_at_P69",
+      "_from": "persons/Q434513",
+      "_to": "organizations/Q4008476",
+      "type": "educated_at",
+      "wikidata_property": "P69"
+    },
+    {
+      "_key": "Q4616_Q4008476_educated_at_P69",
+      "_from": "persons/Q4616",
+      "_to": "organizations/Q4008476",
+      "type": "educated_at",
+      "wikidata_property": "P69"
+    },
+    {
+      "_key": "Q1378067_Q181888_position_held_P39",
+      "_from": "persons/Q1378067",
+      "_to": "organizations/Q181888",
+      "type": "position_held",
+      "wikidata_property": "P39"
+    },
+    {
+      "_key": "Q11937813_Q181888_position_held_P39",
+      "_from": "persons/Q11937813",
+      "_to": "organizations/Q181888",
+      "type": "position_held",
+      "wikidata_property": "P39"
+    },
+    {
+      "_key": "Q11937813_Q1251441_position_held_P39",
+      "_from": "persons/Q11937813",
+      "_to": "organizations/Q1251441",
+      "type": "position_held",
+      "wikidata_property": "P39"
+    },
+    {
+      "_key": "Q6829642_Q1251441_position_held_P39",
+      "_from": "persons/Q6829642",
+      "_to": "organizations/Q1251441",
+      "type": "position_held",
+      "wikidata_property": "P39",
+      "start_date": "2016-01-00",
+      "end_date": "2017-01-00"
+    },
+    {
+      "_key": "Q6829642_Q29552_member_of_P102",
+      "_from": "persons/Q6829642",
+      "_to": "organizations/Q29552",
+      "type": "member_of",
+      "wikidata_property": "P102"
+    },
+    {
+      "_key": "Q19848_Q29552_member_of_P102",
+      "_from": "persons/Q19848",
+      "_to": "organizations/Q29552",
+      "type": "member_of",
+      "wikidata_property": "P102"
+    },
+    {
+      "_key": "Q7259_Q35794_employee_P108",
+      "_from": "persons/Q7259",
+      "_to": "organizations/Q35794",
+      "type": "employee",
+      "wikidata_property": "P108"
+    },
+    {
+      "_key": "Q102365643_Q35794_educated_at_P69",
+      "_from": "persons/Q102365643",
+      "_to": "organizations/Q35794",
+      "type": "educated_at",
+      "wikidata_property": "P69"
+    },
+    {
+      "_key": "Q102365643_Q17630723_employee_P108",
+      "_from": "persons/Q102365643",
+      "_to": "organizations/Q17630723",
+      "type": "employee",
+      "wikidata_property": "P108"
+    },
+    {
+      "_key": "Q17630723__Q420822__2024-06-30",
+      "_from": "organizations/Q17630723",
+      "_to": "organizations/Q420822",
+      "type": "holds_shares_of"
+    },
+    {
+      "_key": "Q15935_Q420822_employee_P108",
+      "_from": "persons/Q15935",
+      "_to": "organizations/Q420822",
+      "type": "employee",
+      "wikidata_property": "P108",
+      "start_date": "2018-00-00",
+      "end_date": "2020-00-00"
+    },
+    {
+      "_key": "Q9036_Q632404_employee_P108",
+      "_from": "persons/Q9036",
+      "_to": "organizations/Q632404",
+      "type": "employee",
+      "wikidata_property": "P108",
+      "start_date": "1888-01-01"
+    },
+    {
+      "_key": "Q725940_Q214346_founder_P112",
+      "_from": "persons/Q725940",
+      "_to": "organizations/Q214346",
+      "type": "founder",
+      "wikidata_property": "P112"
+    },
+    {
+      "_key": "Q725940_Q29552_member_of_P102",
+      "_from": "persons/Q725940",
+      "_to": "organizations/Q29552",
+      "type": "member_of",
+      "wikidata_property": "P102"
+    },
+    {
+      "_key": "Q36153_Q29552_member_of_P102",
+      "_from": "persons/Q36153",
+      "_to": "organizations/Q29552",
+      "type": "member_of",
+      "wikidata_property": "P102"
+    },
+    {
+      "_key": "Q937_Q463303_member_of_P463",
+      "_from": "persons/Q937",
+      "_to": "organizations/Q463303",
+      "type": "member_of",
+      "wikidata_property": "P463",
+      "start_date": "1924-00-00"
+    },
+    {
+      "_key": "Q13133_Q463303_member_of_P463",
+      "_from": "persons/Q13133",
+      "_to": "organizations/Q463303",
+      "type": "member_of",
+      "wikidata_property": "P463"
+    },
+    {
+      "_key": "Q13133_Q7996715_educated_at_P69",
+      "_from": "persons/Q13133",
+      "_to": "organizations/Q7996715",
+      "type": "educated_at",
+      "wikidata_property": "P69",
+      "end_date": "1981-01-01"
+    },
+    {
+      "_key": "Q6758256_Q7996715_educated_at_P69",
+      "_from": "persons/Q6758256",
+      "_to": "organizations/Q7996715",
+      "type": "educated_at",
+      "wikidata_property": "P69"
+    }
+  ],
+  "involvements": [
+    {
+      "_key": "Q83155_Q6534_participant_P1344",
+      "_from": "persons/Q83155",
+      "_to": "events/Q6534",
+      "type": "participant",
+      "wikidata_property": "P1344"
+    },
+    {
+      "_key": "Q517_Q6534_participant_P1344",
+      "_from": "persons/Q517",
+      "_to": "events/Q6534",
+      "type": "participant",
+      "wikidata_property": "P1344"
+    }
+  ],
+  "org_structure": [
+    {
+      "_key": "Q1065_Q740308_subsidiary_of_P355",
+      "_from": "organizations/Q1065",
+      "_to": "organizations/Q740308",
+      "type": "subsidiary_of",
+      "wikidata_property": "P355",
+      "edge_collection": "org_structure"
+    },
+    {
+      "_key": "Q214346_Q632404_owns_P1830",
+      "_from": "organizations/Q214346",
+      "_to": "organizations/Q632404",
+      "type": "owns",
+      "wikidata_property": "P1830"
+    }
+  ],
+  "game_challenges": [
+    {
+      "start_qid": "Q16397",
+      "target_qid": "Q8016"
+    },
+    {
+      "start_qid": "Q255",
+      "target_qid": "Q517"
+    },
+    {
+      "start_qid": "Q409",
+      "target_qid": "Q9682"
+    },
+    {
+      "start_qid": "Q5582",
+      "target_qid": "Q19837"
+    },
+    {
+      "start_qid": "Q5588",
+      "target_qid": "Q317521"
+    },
+    {
+      "start_qid": "Q5593",
+      "target_qid": "Q2831"
+    },
+    {
+      "start_qid": "Q635",
+      "target_qid": "Q11459"
+    },
+    {
+      "start_qid": "Q7186",
+      "target_qid": "Q4616"
+    },
+    {
+      "start_qid": "Q7259",
+      "target_qid": "Q15935"
+    },
+    {
+      "start_qid": "Q9036",
+      "target_qid": "Q36153"
+    },
+    {
+      "start_qid": "Q937",
+      "target_qid": "Q41421"
+    }
+  ]
+}

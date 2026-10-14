@@ -1,0 +1,72 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+dist/
+.vite/
+images/
+_site/
+*.egg-info/
+.DS_Store
+
+# Test artifacts
+.playwright-mcp/
+mobile-test.png
+nohup.out
+
+# Runtime logs
+backend/logs/
+runlogs/
+
+# Data dumps
+*.nt.gz
+*.tar.gz
+
+# DB backups
+db_backup_*/
+
+# Pass1/pass2 generated output files
+backend/pass1/
+backend/pass2/
+
+# Generated feed-card review artifacts (regenerable via generate_card_samples.py)
+docs/mockups/feed/
+
+# Dev-only overrides and local tooling
+docker-compose.override.yml
+backend/scripts/bench_json_parse.py
+backend/scripts/sec/fetch_sc13_bulk.py
+backend/tests/test_fetch_sc13_bulk.py
+backups-*/
+
+# Personal/local scratch notes — not part of the project
+migration.txt
+mp_list.csv
+
+# Local snapshots created before deployment/config changes
+caddy/Caddyfile.before-*
+caddy/Caddyfile.pre-*
+docker-compose.yml.pre-*
+
+# Claude Code tooling (agent config, not project source)
+.claude/
+.agents/
+skills-lock.json
+
+# Test reports and coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Runtime and local operational snapshots
+ops-backups/
+
+# Wikidata truthy dumps
+*.nt.bz2
+
+# Local build/junk (regenerable)
+*.rootbak/
+scripts/marketing/.local/
+caddy/Caddyfile.local

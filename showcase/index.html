@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HumansMap — static demo</title>
+  <meta name="description" content="A static, backend-free demo of HumansMap: explore connections between public figures. Built from a small real Wikidata slice." />
+  <link rel="stylesheet" href="showcase.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/">
+      <span class="brand-mark">HM</span>
+      <span class="brand-name">HumansMap</span>
+    </a>
+    <nav class="topnav">
+      <a href="#/">Home</a>
+      <a href="#/graph">Graph</a>
+      <a href="https://github.com/" id="repo-link" rel="noopener">Source</a>
+    </nav>
+    <span class="badge" title="A reduced, offline snapshot of the real site — see the notice on the home page.">static demo · subset of the live site</span>
+  </header>
+
+  <main id="app" aria-live="polite">
+    <section class="loading">Loading the demo graph…</section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      <strong>This is a static demo, not the real application.</strong>
+      The live site is a full-stack app (FastAPI + ArangoDB + Redis + Vue) with
+      millions of entities, live SEC EDGAR data, nine languages and a scrollable
+      feed. This page re-implements only the core browsing experience — search,
+      entity pages and a small graph — entirely in your browser, from
+      <code>backend/data/demo/demo_graph.json</code>, a small real slice of
+      Wikidata (CC0). The full source lives in the repository.
+    </p>
+  </footer>
+
+  <script src="vendor/cytoscape.min.js"></script>
+  <script src="vendor/layout-base.js"></script>
+  <script src="vendor/cose-base.js"></script>
+  <script src="vendor/cytoscape-cose-bilkent.js"></script>
+  <script src="showcase.js"></script>
+</body>
+</html>

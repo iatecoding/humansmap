@@ -1,0 +1,243 @@
+:root {
+  /* Background layers */
+  --bg:      #f9f8f4;
+  --surface: #ece8de;
+  --card:    #e4ddd0;
+
+  /* Semantic node / entity colors */
+  --color-person: #bf6b28;
+  --color-org:    #8a8278;
+  --color-event:  #ce9178;
+
+  /* Accent — ink blue */
+  --accent:       #1b4d8e;
+  --accent-hover: #153d73;
+
+  /* Feedback colors — correct/wrong game states */
+  --color-correct:         #2ea043;
+  --color-correct-border:  rgba(46, 160, 67, 0.6);
+  --color-correct-bg:      rgba(46, 160, 67, 0.08);
+  --color-wrong:           #b03030;
+  --color-wrong-border:    rgba(176, 48, 48, 0.6);
+  --color-wrong-bg:        rgba(176, 48, 48, 0.07);
+  --color-reveal:          #bf6b28;
+  --color-reveal-border:   rgba(191, 107, 40, 0.6);
+  --color-reveal-bg:       rgba(191, 107, 40, 0.07);
+
+  /* Borders — dark on light */
+  --border-faint:   rgba(0, 0, 0, 0.06);
+  --border-subtle:  rgba(0, 0, 0, 0.10);
+  --border:         rgba(0, 0, 0, 0.15);
+  --border-visible: rgba(0, 0, 0, 0.22);
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:    'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Text */
+  --text:        #1c1510;
+  --text-muted:  rgba(28, 21, 16, 0.65);   /* informational secondary text — ~4.6:1 contrast */
+  --text-subtle: rgba(28, 21, 16, 0.42);   /* decorative only: separators, arrows, chrome */
+
+  /* Canvas / dot-grid background (graph + trivia page) */
+  --canvas-bg:         #f2ede3;
+  --canvas-bg-overlay: rgba(242, 237, 227, 0.78);
+
+  /* Semi-transparent bg for floating panels */
+  --bg-panel:       rgba(249, 248, 244, 0.95);
+  --bg-panel-solid: rgba(249, 248, 244, 0.97);
+  --bg-overlay:     rgba(249, 248, 244, 0.82);
+
+  /* Shared control geometry and keyboard focus treatment */
+  --radius-control: 8px;
+  --touch-target: 44px;
+  --focus-ring: 2px solid var(--accent);
+
+  /* Layer scale — component internals are isolated before using these. */
+  --z-canvas: 0;
+  --z-canvas-overlay: 2;
+  --z-loading: 5;
+  --z-floating-ui: 10;
+  --z-detail-panel: 30;
+  --z-modal: 100;
+
+  --text-inverse: #f9f8f4;
+  --scrim-strong: rgba(28, 21, 16, 0.78);
+
+  /* Bookmark gold */
+  --color-bookmark: #c88b00;
+
+  /* Event text (for badges/labels — slightly deeper than the node color) */
+  --color-event-text: #b06840;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  height: 100%;
+}
+
+/* Keep structural descriptions available to assistive technology without
+ * changing the visual composition of the canvas-first interface. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*
+ * Person and organization pages are progressively enhanced: #app is the
+ * interactive graph and #seo-content is the readable profile that follows it.
+ * Keeping this content in the rendered DOM gives users a text alternative to
+ * the canvas and lets search engines see the same substantive page.
+ */
+body:has(#seo-content) {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body:has(#seo-content) #app {
+  height: 100vh;
+}
+
+#seo-content {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.25rem, 4vw, 3rem) 5rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+#seo-content h1,
+#seo-content h2 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+}
+
+#seo-content h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+#seo-content h2 {
+  margin: 2rem 0 0.75rem;
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+}
+
+#seo-content p,
+#seo-content dl,
+#seo-content section,
+#seo-content nav {
+  max-width: 65ch;
+}
+
+#seo-content dl {
+  display: grid;
+  grid-template-columns: minmax(7rem, auto) 1fr;
+  gap: 0.45rem 1rem;
+}
+
+#seo-content dt {
+  font-weight: 600;
+}
+
+#seo-content dd {
+  margin: 0;
+}
+
+#seo-content a {
+  color: var(--accent);
+}
+
+#seo-content img {
+  display: block;
+  width: min(18rem, 100%);
+  height: auto;
+  margin: 1.25rem 0;
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Font inheritance for form controls */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus indicators — keyboard nav only */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Pulse ring — used by PulseRing.vue for onboarding tour */
+@keyframes pulse-ring {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.2);
+    opacity: 0;
+  }
+}

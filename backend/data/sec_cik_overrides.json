@@ -1,0 +1,4 @@
+{
+  "_comment": "Manual CIK overrides for Wikidata entities that lack a P5531 statement. Only used as a fallback: if Wikidata already records the CIK, the SPARQL result wins and the override is ignored. Expand conservatively — entries are trusted verbatim. Source each CIK from https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={cik}. Keys are Wikidata QIDs; values are 10-digit zero-padded CIK strings.",
+  "Q3884": "0001018724"
+}
