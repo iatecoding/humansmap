@@ -1,0 +1,39 @@
+name: Data correction
+description: Report an incorrect or missing person, organization, or connection.
+title: "[Data]: "
+labels: [data]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        HumansMap derives data primarily from Wikidata and SEC EDGAR. Please cite
+        the relevant entity or filing and do not submit private personal data.
+  - type: input
+    id: humansmap_url
+    attributes:
+      label: HumansMap URL
+      description: Link to the affected page or graph.
+      placeholder: https://humansmap.com/...
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What should be corrected?
+      description: Explain what is wrong and what the data should show.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Link to the Wikidata entity, SEC filing, or another primary source.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: This report contains no private personal data or unsupported allegations.
+          required: true

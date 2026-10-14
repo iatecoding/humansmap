@@ -1,0 +1,7 @@
+The static GitHub Pages showcase is deactivated.
+
+This marker file tells `.github/workflows/pages.yml` to unpublish the Pages
+site and skip the build/deploy. Remove this file to re-enable the showcase.
+
+Reason: the static preview was judged too different from the real application
+to be a useful public representation of the project.

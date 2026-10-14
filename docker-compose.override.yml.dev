@@ -1,0 +1,42 @@
+# Development overrides — automatically merged by `docker compose up`
+# Remove or rename this file for production deployment.
+#
+# With this file present:
+#   - Frontend runs Vite dev server with hot reload
+#   - Source code is bind-mounted (changes reflect instantly)
+#
+# For production: rename to docker-compose.override.yml.dev
+#   mv docker-compose.override.yml docker-compose.override.yml.dev
+#
+# To rebuild production frontend after changes:
+#   docker compose build frontend && docker compose up -d
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      # Use a dev-specific Dockerfile
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    expose:
+      - "3000"
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /app/.vite
+      - /app/node_modules/.vite:uid=1000,mode=1777
+
+  caddy:
+    volumes:
+      - ./caddy/Caddyfile.dev:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+      - image_cache:/srv/images:ro
+    depends_on:
+      backend:
+        condition: service_healthy
+      frontend:
+        condition: service_started

@@ -1,0 +1,87 @@
+name: Pages showcase
+
+# Publishes the static, backend-free showcase in `showcase/` to GitHub Pages.
+# It is a reduced preview of the site (search, entity pages, graph) built from
+# the small demo dataset — not the full application.
+#
+# DEACTIVATED while `showcase/DISABLED` exists: the build and deploy are
+# skipped. Unpublishing the currently-deployed site is a repository setting
+# (repo home → "GitHub Pages" card → ⋮ → "Unpublish site"); the workflow token
+# cannot do it (needs repo admin). Remove `showcase/DISABLED` to re-enable.
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      disabled: ${{ steps.state.outputs.disabled }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: state
+        name: Check for the disable marker
+        run: |
+          if [ -f showcase/DISABLED ]; then
+            echo "Showcase disabled (showcase/DISABLED present) — skipping build/deploy."
+            echo "disabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "disabled=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  build:
+    needs: check
+    if: needs.check.outputs.disabled != 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies (for the vendored graph libraries)
+        working-directory: frontend
+        run: npm ci
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build the static showcase
+        run: python scripts/build_showcase.py _site
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: [check, build]
+    if: needs.check.outputs.disabled != 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

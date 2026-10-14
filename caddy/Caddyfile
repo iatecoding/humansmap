@@ -1,0 +1,211 @@
+{
+	# Caddy generates a self-signed cert — Cloudflare Full mode accepts this
+	# and handles public HTTPS for visitors externally.
+
+	# Trust Cloudflare's proxy IPs so {client_ip} resolves to the real visitor IP
+	# Source: https://www.cloudflare.com/ips/
+	servers {
+		trusted_proxies static \
+			173.245.48.0/20 \
+			103.21.244.0/22 \
+			103.22.200.0/22 \
+			103.31.4.0/22 \
+			141.101.64.0/18 \
+			108.162.192.0/18 \
+			190.93.240.0/20 \
+			188.114.96.0/20 \
+			197.234.240.0/22 \
+			198.41.128.0/17 \
+			162.158.0.0/15 \
+			104.16.0.0/13 \
+			104.24.0.0/14 \
+			172.64.0.0/13 \
+			131.0.72.0/22 \
+			2400:cb00::/32 \
+			2606:4700::/32 \
+			2803:f800::/32 \
+			2405:b500::/32 \
+			2405:8100::/32 \
+			2a06:98c0::/29 \
+			2c0f:f248::/32
+	}
+}
+
+# Local dev access (SSH tunnel: ssh -L 8080:localhost:80)
+:80 {
+	# Serve cached images directly
+	handle /api/images/* {
+		uri strip_prefix /api/images
+		file_server {
+			root /srv/images
+		}
+	}
+
+	handle /api/* {
+		reverse_proxy backend:8000
+	}
+
+	handle /share {
+		reverse_proxy backend:8000
+	}
+
+	handle /person/* {
+		reverse_proxy backend:8000
+	}
+
+	handle /organization/* {
+		reverse_proxy backend:8000
+	}
+
+	handle /og/* {
+		reverse_proxy backend:8000
+	}
+
+	@sitemap_trailing path_regexp sitemap_trailing ^(/sitemap(?:-[0-9]+|-org-[0-9]+)?\.xml)/+$
+	redir @sitemap_trailing {re.sitemap_trailing.1} 308
+
+	handle /sitemap.xml {
+		reverse_proxy backend:8000
+	}
+
+	handle /sitemap-*.xml {
+		reverse_proxy backend:8000
+	}
+
+	# Public marketing gallery — static assets only. The strategy docs that
+	# share this directory (.md/.json) must never be served here.
+	@gallery_root path /gallery /gallery/
+	redir @gallery_root /gallery/gallery.html 308
+	handle_path /gallery/* {
+		@gallery_docs path *.md *.json
+		respond @gallery_docs 404
+		root * /srv/gallery
+		@gallery_assets path *.png *.webp *.svg *.jpg *.jpeg
+		header @gallery_assets Cache-Control "public, max-age=604800"
+		file_server
+	}
+
+	handle {
+		root * /srv/frontend
+		try_files {path} /index.html
+		file_server
+	}
+}
+
+humansmap.com {
+	# Self-signed cert — Cloudflare Full mode handles real TLS for visitors
+	tls internal
+
+	# Gzip + zstd compression for API responses and static assets
+	encode zstd gzip
+
+	# Structured JSON access logs
+	log {
+		output stdout
+		format json
+	}
+
+	# Security headers
+	header {
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; connect-src 'self'; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'none'"
+		Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+		-Server
+	}
+
+	# Serve cached images directly (bypass Python)
+	handle /api/images/* {
+		uri strip_prefix /api/images
+		header Cache-Control "public, max-age=604800"
+		file_server {
+			root /srv/images
+		}
+	}
+
+	# API requests — forward real visitor IP so rate limiting works correctly
+	handle /api/* {
+		reverse_proxy backend:8000 {
+			header_up X-Real-IP {client_ip}
+		}
+	}
+
+	# Share preview — OG meta tags for social media crawlers
+	handle /share {
+		reverse_proxy backend:8000 {
+			header_up X-Real-IP {client_ip}
+		}
+	}
+
+	# Person page — OG meta tags for individual person sharing
+	handle /person/* {
+		reverse_proxy backend:8000 {
+			header_up X-Real-IP {client_ip}
+		}
+	}
+
+	# Organization pages — server-rendered metadata, structure, and people links
+	handle /organization/* {
+		reverse_proxy backend:8000 {
+			header_up X-Real-IP {client_ip}
+		}
+	}
+
+	# OG image generation — dynamic PNG cards for social previews
+	handle /og/* {
+		reverse_proxy backend:8000 {
+			header_up X-Real-IP {client_ip}
+		}
+	}
+
+	@sitemap_trailing path_regexp sitemap_trailing ^(/sitemap(?:-[0-9]+|-org-[0-9]+)?\.xml)/+$
+	redir @sitemap_trailing {re.sitemap_trailing.1} 308
+
+	# Sitemaps (index + numbered sub-sitemaps)
+	handle /sitemap.xml {
+		reverse_proxy backend:8000 {
+			header_up X-Real-IP {client_ip}
+		}
+	}
+
+	handle /sitemap-*.xml {
+		reverse_proxy backend:8000 {
+			header_up X-Real-IP {client_ip}
+		}
+	}
+
+	@robots path /robots.txt
+	header @robots Cache-Control "no-store, no-cache, must-revalidate"
+	@release path /release.json
+	header @release Cache-Control "no-store, no-cache, must-revalidate"
+
+	# Public marketing gallery — static assets only. The strategy docs that
+	# share this directory (.md/.json) must never be served here.
+	@gallery_root path /gallery /gallery/
+	redir @gallery_root /gallery/gallery.html 308
+	handle_path /gallery/* {
+		@gallery_docs path *.md *.json
+		respond @gallery_docs 404
+		root * /srv/gallery
+		@gallery_assets path *.png *.webp *.svg *.jpg *.jpeg
+		header @gallery_assets Cache-Control "public, max-age=604800"
+		file_server
+	}
+
+	# Static frontend — built Vue app with SPA history-mode fallback
+	handle {
+		root * /srv/frontend
+		@homepage path / /index.html
+		header @homepage Cache-Control "public, max-age=0, must-revalidate"
+		try_files {path} /index.html
+		file_server
+		# Only cache real static assets — not the index.html SPA fallback
+		@static path *.png *.jpg *.jpeg *.gif *.svg *.ico *.webp *.woff2 *.woff *.ttf
+		header @static Cache-Control "public, max-age=86400"
+		@immutable path *.js *.css *.woff2 *.woff *.ttf
+		header @immutable Cache-Control "public, max-age=31536000, immutable"
+	}
+}
+

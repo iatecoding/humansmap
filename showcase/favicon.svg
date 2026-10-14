@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Outer ring -->
+  <circle cx="16" cy="16" r="15" stroke="#1b4d8e" stroke-width="1" fill="#f2ede3"/>
+  <!-- Edges -->
+  <line x1="16" y1="12.5" x2="9.5" y2="17" stroke="#1b4d8e" stroke-width="0.9" stroke-opacity="0.45"/>
+  <line x1="16" y1="12.5" x2="22.5" y2="17" stroke="#1b4d8e" stroke-width="0.9" stroke-opacity="0.45"/>
+  <line x1="9.5" y1="21" x2="15" y2="23.5" stroke="#bf6b28" stroke-width="0.9" stroke-opacity="0.45"/>
+  <line x1="22.5" y1="21" x2="17" y2="23.5" stroke="#8a8278" stroke-width="0.9" stroke-opacity="0.45"/>
+  <!-- Top node: accent blue (hub / person) -->
+  <circle cx="16" cy="10" r="3" fill="#1b4d8e"/>
+  <!-- Left node: person amber -->
+  <circle cx="8" cy="19" r="2.5" fill="#bf6b28"/>
+  <!-- Right node: org gray-brown -->
+  <circle cx="24" cy="19" r="2.5" fill="#8a8278"/>
+  <!-- Bottom node: event warm orange -->
+  <circle cx="16" cy="25" r="2" fill="#ce9178"/>
+</svg>

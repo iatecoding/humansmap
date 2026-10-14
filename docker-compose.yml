@@ -1,0 +1,186 @@
+x-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+  caddy:
+    image: caddy:2-alpine
+    logging: *default-logging
+    environment:
+      # Keep the deployer API private by default.  Set only VPN/admin CIDRs
+      # in .env (for example: 10.42.0.0/24 203.0.113.18/32).
+      CONTROL_PLANE_ALLOWED_CIDRS: "${CONTROL_PLANE_ALLOWED_CIDRS:-127.0.0.1/32}"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+      - image_cache:/srv/images:ro
+      - og_cache:/srv/og_cache:ro
+      - frontend_dist:/srv/frontend:ro
+      # Public marketing gallery (static assets only — see the /gallery route
+      # in caddy/Caddyfile; the .md/.json strategy docs here are never served).
+      - ./docs/marketing:/srv/gallery:ro
+    depends_on:
+      backend:
+        condition: service_healthy
+      frontend:
+        condition: service_completed_successfully
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+
+  arangodb:
+    image: arangodb:3.11
+    logging: *default-logging
+    environment:
+      ARANGO_ROOT_PASSWORD: ${ARANGO_PASSWORD}
+      ARANGO_APP_PASSWORD: ${ARANGO_APP_PASSWORD}
+      ARANGO_APP_USERNAME: ${ARANGO_APP_USERNAME:-app_user}
+      ARANGO_DB: ${ARANGO_DB:-world_graph_all}
+    # NO ports exposed — internal only
+    expose:
+      - "8529"
+    volumes:
+      - arango_data:/var/lib/arangodb3
+      - arango_apps:/var/lib/arangodb3-apps
+      - ./arango-init/init-user.js:/docker-entrypoint-initdb.d/init-user.js:ro
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 4096m
+
+  redis:
+    image: redis:7-alpine
+    logging: *default-logging
+    # NO ports exposed — internal only
+    expose:
+      - "6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    read_only: true
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    command: ["redis-server", "--maxmemory", "1gb", "--maxmemory-policy", "volatile-lru", "--appendonly", "yes", "--appendfsync", "everysec"]
+    deploy:
+      resources:
+        limits:
+          memory: 1280m
+
+  backend:
+    build:
+      context: ./backend
+      args:
+        APP_BUILD_SHA: ${APP_BUILD_SHA:-dev}
+    logging: *default-logging
+    # NO ports exposed — internal only, Caddy proxies to it
+    expose:
+      - "8000"
+    environment:
+      ARANGO_HOST: arangodb
+      ARANGO_PORT: 8529
+      ARANGO_DB: ${ARANGO_DB:-world_graph_all}
+      ARANGO_USERNAME: ${ARANGO_APP_USERNAME:-app_user}
+      ARANGO_PASSWORD: ${ARANGO_APP_PASSWORD}
+      PERSON_SCOPE: global
+      GLOBAL_MIN_STATEMENTS: 10
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-https://humansmap.com,http://localhost:8080}
+      ADMIN_TOKEN: ${ADMIN_TOKEN:-}
+      DUMP_FILE: /data/wikidump/latest-truthy.nt.bz2
+    depends_on:
+      arangodb:
+        condition: service_started
+      redis:
+        condition: service_healthy
+    volumes:
+      - image_cache:/app/images
+      - og_cache:/app/og_cache
+      - /data/wikidump:/data/wikidump:ro
+      - sec_data:/data/sec
+      - reports_data:/app/reports
+      - frontend_dist:/srv/frontend:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    tmpfs:
+      - /tmp
+    ulimits:
+      nofile:
+        soft: 8192
+        hard: 8192
+    deploy:
+      resources:
+        limits:
+          memory: 1024m
+
+  # Disabled by the checked-in manifest until the backup and candidate-database gates are approved.
+  ingestion:
+    profiles: ["ingestion"]
+    build: ./backend
+    logging: *default-logging
+    user: "0:0"
+    environment:
+      ARANGO_HOST: arangodb
+      ARANGO_PORT: 8529
+      ARANGO_DB: ${INGESTION_ARANGO_DB:-}
+      ARANGO_USERNAME: ${ARANGO_APP_USERNAME:-app_user}
+      ARANGO_PASSWORD: ${ARANGO_APP_PASSWORD}
+      INGESTION_DUMP_URL: ${INGESTION_DUMP_URL:-}
+      INGESTION_STATE_DIR: /data/ingestion
+      INGESTION_MANIFEST: /app/config/ingestion/global-json-v1.json
+      REMOTE_TIMEOUT_SECONDS: ${REMOTE_TIMEOUT_SECONDS:-120}
+      # Full-collection cleanup can legitimately take many minutes. The
+      # materializer also checkpoints before it, making this phase retry-safe.
+      ARANGO_MAINTENANCE_TIMEOUT_SECONDS: ${ARANGO_MAINTENANCE_TIMEOUT_SECONDS:-1800}
+    depends_on:
+      arangodb:
+        condition: service_started
+    volumes:
+      - ingestion_state:/data/ingestion
+    command: ["python", "/app/scripts/run_global_json_ingestion.py"]
+    restart: "no"
+    deploy:
+      resources:
+        limits:
+          memory: 1280m
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        APP_BUILD_SHA: ${APP_BUILD_SHA:-dev}
+    logging: *default-logging
+    volumes:
+      - frontend_dist:/srv/frontend
+    depends_on:
+      - backend
+    restart: "no"
+
+volumes:
+  arango_data:
+  arango_apps:
+  image_cache:
+  og_cache:
+  sec_data:
+  caddy_data:
+  caddy_config:
+  redis_data:
+  reports_data:
+  frontend_dist:
+  ingestion_state:
