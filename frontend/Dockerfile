@@ -1,4 +1,4 @@
-FROM node:20-alpine AS build
+FROM node:22-alpine AS build
 ARG APP_BUILD_SHA=dev
 WORKDIR /app
 COPY package.json package-lock.json* ./
