@@ -36,10 +36,14 @@ const DATE_LOCALES = {
 }
 
 function detectLocale() {
-  const saved = localStorage.getItem('locale')
-  if (saved && TRANSLATIONS[saved]) return saved
+  try {
+    const saved = localStorage.getItem('locale')
+    if (saved && TRANSLATIONS[saved]) return saved
+  } catch {
+    // ignore when localStorage is unavailable
+  }
 
-  const browser = navigator.language?.slice(0, 2)
+  const browser = typeof navigator !== 'undefined' ? navigator.language?.slice(0, 2) : undefined
   return TRANSLATIONS[browser] ? browser : 'en'
 }
 
@@ -69,7 +73,11 @@ export function useLocale() {
   function setLocale(lang) {
     if (!TRANSLATIONS[lang]) return
     locale.value = lang
-    localStorage.setItem('locale', lang)
+    try {
+      localStorage.setItem('locale', lang)
+    } catch {
+      // ignore
+    }
   }
 
   // Prefer the name in the current UI language, fall back en → it

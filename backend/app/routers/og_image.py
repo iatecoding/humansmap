@@ -87,7 +87,7 @@ def _wrap_text(text: str, font: ImageFont.ImageFont, max_width: int, draw: Image
 
 def _circle_crop(img: Image.Image, size: int) -> Image.Image:
     """Resize image to size×size and apply a circular mask."""
-    img = img.convert("RGBA").resize((size, size), Image.LANCZOS)
+    img = img.convert("RGBA").resize((size, size), Image.Resampling.LANCZOS)
     mask = Image.new("L", (size, size), 0)
     mask_draw = ImageDraw.Draw(mask)
     mask_draw.ellipse((0, 0, size, size), fill=255)

@@ -17,9 +17,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor-vue': ['vue', 'vue-router'],
-          'vendor-cytoscape': ['cytoscape', 'cytoscape-cose-bilkent'],
+        manualChunks(id) {
+          if (id.includes('node_modules/vue') || id.includes('node_modules/@vue')) {
+            return 'vendor-vue'
+          }
+          if (id.includes('node_modules/cytoscape')) {
+            return 'vendor-cytoscape'
+          }
         },
       },
     },

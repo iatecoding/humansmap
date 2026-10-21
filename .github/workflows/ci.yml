@@ -3,7 +3,7 @@ name: CI
 on:
   push:
   pull_request:
-    branches: [master]
+    branches: [main, master]
 
 jobs:
   backend-tests:
@@ -28,9 +28,9 @@ jobs:
         ports:
           - 8529:8529
         options: >-
-          --health-cmd "wget --no-verbose --tries=1 --spider http://localhost:8529/_api/version || exit 1"
+          --health-cmd "arangosh --server.endpoint tcp://127.0.0.1:8529 --server.username root --server.password ci-password --javascript.execute-string 'db._version()' || exit 1"
           --health-interval 10s
-          --health-timeout 5s
+          --health-timeout 10s
           --health-retries 12
       redis:
         image: redis:7-alpine
